@@ -852,17 +852,20 @@ var CoursesComponent = /** @class */ (function () {
     CoursesComponent.prototype.Timer = function () {
         var _this = this;
         this.now = new Date();
-        this.eventDate = new Date(2018, 9, 17);
+        this.eventDate = new Date('Sep 17, 2018 17:30:00');
         this.currentTime = this.now.getTime();
         this.eventTime = this.eventDate.getTime();
         this.remTime = this.eventTime - this.currentTime;
-        this.second = Math.floor(this.remTime / 1000);
-        this.minute = Math.floor(this.second / 60);
-        this.hour = Math.floor(this.minute / 60);
-        this.days = Math.floor(this.hour / 24) + 31;
-        this.hour %= 24;
-        this.minute %= 60;
-        this.second %= 60;
+        this.days = Math.floor(this.remTime / (1000 * 60 * 60 * 24));
+        this.hour = Math.floor((this.remTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minute = Math.floor((this.remTime % (1000 * 60 * 60)) / (1000 * 60));
+        this.second = Math.floor((this.remTime % (1000 * 60)) / 1000);
+        if (this.remTime < 0) {
+            this.hour = 0;
+            this.minute = 0;
+            this.second = 0;
+            this.days = 0;
+        }
         setTimeout(function () {
             _this.Timer();
         }, 1000);
@@ -1085,17 +1088,20 @@ var DemopageComponent = /** @class */ (function () {
     DemopageComponent.prototype.Timer = function () {
         var _this = this;
         this.now = new Date();
-        this.eventDate = new Date(2018, 7, 17);
+        this.eventDate = new Date('Sep 17, 2018 17:30:00');
         this.currentTime = this.now.getTime();
         this.eventTime = this.eventDate.getTime();
         this.remTime = this.eventTime - this.currentTime;
-        this.second = Math.floor(this.remTime / 1000);
-        this.minute = Math.floor(this.second / 60);
-        this.hour = Math.floor(this.minute / 60);
-        this.days = Math.floor(this.hour / 24) + 31;
-        this.hour %= 24;
-        this.minute %= 60;
-        this.second %= 60;
+        this.days = Math.floor(this.remTime / (1000 * 60 * 60 * 24));
+        this.hour = Math.floor((this.remTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minute = Math.floor((this.remTime % (1000 * 60 * 60)) / (1000 * 60));
+        this.second = Math.floor((this.remTime % (1000 * 60)) / 1000);
+        if (this.remTime < 0) {
+            this.hour = 0;
+            this.minute = 0;
+            this.second = 0;
+            this.days = 0;
+        }
         setTimeout(function () {
             _this.Timer();
         }, 1000);
@@ -1531,17 +1537,20 @@ var ExpertComponent = /** @class */ (function () {
     ExpertComponent.prototype.Timer = function () {
         var _this = this;
         this.now = new Date();
-        this.eventDate = new Date(2018, 7, 17);
+        this.eventDate = new Date('Sep 17, 2018 17:30:00');
         this.currentTime = this.now.getTime();
         this.eventTime = this.eventDate.getTime();
         this.remTime = this.eventTime - this.currentTime;
-        this.second = Math.floor(this.remTime / 1000);
-        this.minute = Math.floor(this.second / 60);
-        this.hour = Math.floor(this.minute / 60);
-        this.days = Math.floor(this.hour / 24) + 31;
-        this.hour %= 24;
-        this.minute %= 60;
-        this.second %= 60;
+        this.days = Math.floor(this.remTime / (1000 * 60 * 60 * 24));
+        this.hour = Math.floor((this.remTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minute = Math.floor((this.remTime % (1000 * 60 * 60)) / (1000 * 60));
+        this.second = Math.floor((this.remTime % (1000 * 60)) / 1000);
+        if (this.remTime < 0) {
+            this.hour = 0;
+            this.minute = 0;
+            this.second = 0;
+            this.days = 0;
+        }
         setTimeout(function () {
             _this.Timer();
         }, 1000);
@@ -2222,17 +2231,20 @@ var IntermediateComponent = /** @class */ (function () {
     IntermediateComponent.prototype.Timer = function () {
         var _this = this;
         this.now = new Date();
-        this.eventDate = new Date(2018, 7, 17);
+        this.eventDate = new Date('Sep 17, 2018 17:30:00');
         this.currentTime = this.now.getTime();
         this.eventTime = this.eventDate.getTime();
         this.remTime = this.eventTime - this.currentTime;
-        this.second = Math.floor(this.remTime / 1000);
-        this.minute = Math.floor(this.second / 60);
-        this.hour = Math.floor(this.minute / 60);
-        this.days = Math.floor(this.hour / 24) + 31;
-        this.hour %= 24;
-        this.minute %= 60;
-        this.second %= 60;
+        this.days = Math.floor(this.remTime / (1000 * 60 * 60 * 24));
+        this.hour = Math.floor((this.remTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minute = Math.floor((this.remTime % (1000 * 60 * 60)) / (1000 * 60));
+        this.second = Math.floor((this.remTime % (1000 * 60)) / 1000);
+        if (this.remTime < 0) {
+            this.hour = 0;
+            this.minute = 0;
+            this.second = 0;
+            this.days = 0;
+        }
         setTimeout(function () {
             _this.Timer();
         }, 1000);
